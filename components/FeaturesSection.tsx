@@ -13,16 +13,18 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon: Icon, title, descriptio
     className="bg-gray-800 p-6 rounded-lg shadow-2xl transform-gpu"
   >
     <Icon className="h-12 w-12 text-green-400 mb-4" />
-    <h3 className="text-2xl font-bold mb-2">{title}</h3>
-    <p className="text-gray-400">{description}</p>
+    <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-2">{title}</h3>
+    <p className="text-gray-400 text-sm sm:text-base">{description}</p>
   </motion.div>
 );
 
 export const FeaturesSection = () => (
-  <section className="py-20 bg-gradient-to-r from-gray-900 to-gray-800 text-white">
+  <section className="py-16 sm:py-20 lg:py-24 bg-gradient-to-r from-gray-900 to-gray-800 text-white">
     <div className="container mx-auto px-4">
-      <h2 className="text-4xl font-bold text-center mb-10">Features</h2>
-      <div className="grid md:grid-cols-3 gap-8">
+      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-8 sm:mb-10">
+        Features
+      </h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
         <FeatureCard
           icon={require("lucide-react").Zap}
           title="Real-Time Monitoring"

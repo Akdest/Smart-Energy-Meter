@@ -41,7 +41,9 @@ export const TestimonialsSection = () => {
   return (
     <section className="py-20 bg-gray-800 text-white">
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-4xl font-bold mb-10">What Our Users Say</h2>
+        <h2 className="text-3xl sm:text-4xl font-bold mb-10">
+          What Our Users Say
+        </h2>
         <div className="relative">
           <motion.div
             key={currentIndex}
@@ -51,14 +53,14 @@ export const TestimonialsSection = () => {
             transition={{ duration: 0.5 }}
             className="p-6 bg-gray-900 rounded-lg shadow-2xl max-w-xl mx-auto"
           >
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-4 justify-center sm:justify-start">
               <img
                 src={testimonials[currentIndex].image}
                 alt={testimonials[currentIndex].name}
                 className="h-16 w-16 rounded-full shadow-md"
               />
               <div>
-                <h3 className="text-lg font-bold">
+                <h3 className="text-lg sm:text-xl font-bold">
                   {testimonials[currentIndex].name}
                 </h3>
                 <p className="text-sm text-gray-400">
@@ -74,13 +76,13 @@ export const TestimonialsSection = () => {
           {/* Navigation */}
           <div className="flex justify-center space-x-4 mt-8">
             <button
-              className="p-2 bg-green-500 rounded-full shadow-md"
+              className="p-2 bg-green-500 rounded-full shadow-md text-lg sm:text-xl"
               onClick={prevTestimonial}
             >
               &larr;
             </button>
             <button
-              className="p-2 bg-green-500 rounded-full shadow-md"
+              className="p-2 bg-green-500 rounded-full shadow-md text-lg sm:text-xl"
               onClick={nextTestimonial}
             >
               &rarr;

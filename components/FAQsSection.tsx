@@ -31,7 +31,9 @@ export const FAQsSection = () => {
   return (
     <section className="py-20 bg-gray-900 text-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-10">FAQs</h2>
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-10">
+          FAQs
+        </h2>
         <div className="space-y-4">
           {faqs.map((faq, index) => (
             <div key={index} className="border border-gray-700 rounded-lg">
@@ -39,8 +41,8 @@ export const FAQsSection = () => {
                 className="w-full p-4 text-left flex justify-between items-center"
                 onClick={() => toggleFAQ(index)}
               >
-                <span>{faq.question}</span>
-                <span>{openIndex === index ? "-" : "+"}</span>
+                <span className="text-base sm:text-lg lg:text-xl">{faq.question}</span>
+                <span className="text-xl sm:text-2xl">{openIndex === index ? "-" : "+"}</span>
               </button>
               {openIndex === index && (
                 <motion.div
