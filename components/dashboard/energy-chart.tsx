@@ -10,8 +10,8 @@ interface EnergyChartProps {
 
 export const EnergyChart = ({ data, dataKey, stroke, title }: EnergyChartProps) => {
   return (
-    <div className="bg-dark-800 p-6 rounded-lg shadow-lg text-white">
-      <h3 className="text-xl font-semibold mb-4">{title}</h3>
+    <div className="bg-dark-800 p-6 sm:p-8 md:p-10 rounded-lg shadow-lg text-white">
+      <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-4">{title}</h3>
       <ResponsiveContainer width="100%" height={300}>
         <LineChart data={data}>
           <CartesianGrid strokeDasharray="3 3" />

@@ -11,7 +11,7 @@ export function DataTable({ data }: DataTableProps) {
   if (!data || data.length === 0) {
     return (
       <Card className="p-6 bg-dark-700 text-white shadow-md hover:shadow-lg">
-        <h3 className="font-semibold text-lg mb-4">Previous Data</h3>
+        <h3 className="font-semibold text-lg sm:text-xl mb-4">Previous Data</h3>
         <p>No data available to display.</p>
       </Card>
     );
@@ -19,9 +19,9 @@ export function DataTable({ data }: DataTableProps) {
 
   return (
     <Card className="p-6 bg-dark-700 text-white shadow-md hover:shadow-lg">
-      <h3 className="font-semibold text-lg mb-4">Previous Data</h3>
+      <h3 className="font-semibold text-lg sm:text-xl mb-4">Previous Data</h3>
       <div className="overflow-x-auto">
-        <table className="min-w-full border border-gray-700 text-sm text-gray-300">
+        <table className="min-w-full border border-gray-700 text-sm sm:text-base text-gray-300">
           <thead>
             <tr className="bg-gray-800">
               <th className="p-3 border-b border-gray-600">Time</th>

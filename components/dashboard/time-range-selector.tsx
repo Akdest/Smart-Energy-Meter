@@ -1,3 +1,5 @@
+"use client";
+
 import { FC, useState } from "react";
 import { motion } from "framer-motion";
 
@@ -28,11 +30,10 @@ export const TimeRangeSelector: FC<TimeRangeSelectorProps> = ({ timeframe, onTim
   };
 
   return (
-    <div className="flex justify-center gap-4">
+    <div className="flex flex-col sm:flex-row sm:justify-center gap-4">
       <motion.button
         onClick={() => onTimeframeChange("hourly")}
         className="px-8 py-4 rounded-lg border-2 border-white bg-black text-white shadow-md transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl dark:bg-black dark:text-white dark:border-white/[0.2] dark:hover:shadow-2xl"
-        
         onMouseMove={handleMouseMove} // Apply tilt on mouse move
         whileHover={{ scale: 1.05 }}
       >
@@ -42,7 +43,6 @@ export const TimeRangeSelector: FC<TimeRangeSelectorProps> = ({ timeframe, onTim
       <motion.button
         onClick={() => onTimeframeChange("daily")}
         className="px-8 py-4 rounded-lg border-2 border-white bg-black text-white shadow-md transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl dark:bg-black dark:text-white dark:border-white/[0.2] dark:hover:shadow-2xl"
-       
         onMouseMove={handleMouseMove} // Apply tilt on mouse move
         whileHover={{ scale: 1.05 }}
       >
@@ -52,7 +52,6 @@ export const TimeRangeSelector: FC<TimeRangeSelectorProps> = ({ timeframe, onTim
       <motion.button
         onClick={() => onTimeframeChange("monthly")}
         className="px-8 py-4 rounded-lg border-2 border-white bg-black text-white shadow-md transform transition duration-300 ease-in-out hover:scale-105 hover:shadow-xl dark:bg-black dark:text-white dark:border-white/[0.2] dark:hover:shadow-2xl"
-        
         onMouseMove={handleMouseMove} // Apply tilt on mouse move
         whileHover={{ scale: 1.05 }}
       >

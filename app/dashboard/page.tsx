@@ -67,13 +67,13 @@ const Dashboard = () => {
   return (
     <div className="p-4 sm:p-6 md:p-8 bg-dark-900 relative">
       {/* Back Button */}
-      <div className="absolute top-6 left-6 z-10 mb-12 p-2 border-2 border-white/[0.2] rounded-lg transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:border-white">
+      <div className="absolute top-6 left-6 z-10 lg:mb-12 p-2 border-2 border-white/[0.2] rounded-lg transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl hover:border-white">
         <Link href="/" className="text-white text-4xl">
           <ArrowLeft />
         </Link>
       </div>
 
-      <div className="grid mb-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 mt-12">
+      <div className="grid mb-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 mt-14 lg:mt-12">
         {/* Stats Cards */}
         <StatsCard
           icon={Zap}

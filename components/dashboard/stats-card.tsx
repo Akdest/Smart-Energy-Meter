@@ -1,3 +1,4 @@
+"use client";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
@@ -32,7 +33,7 @@ export const StatsCard = ({
 
   return (
     <motion.div
-      className="relative group/card bg-black p-5 rounded-xl text-white flex items-center justify-between transform transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl dark:bg-black dark:border-white/[0.2] dark:hover:shadow-2xl border border-black/[0.1] w-[20rem] h-[8rem] sm:w-[26rem]"
+      className="relative group/card bg-black p-5 rounded-xl text-white flex items-center justify-between transform transition-all duration-300 ease-in-out hover:scale-110 hover:shadow-xl dark:bg-black dark:border-white/[0.2] dark:hover:shadow-2xl border border-black/[0.1] flex-shrink-0"
       onMouseEnter={() => setTilt({ x: 30, y: 30 })} // Increased initial tilt effect when hovering
       onMouseLeave={() => setTilt({ x: 0, y: 0 })} // Reset tilt when not hovering
       onMouseMove={handleMouseMove} // Apply dynamic tilt based on mouse movement
@@ -43,16 +44,16 @@ export const StatsCard = ({
       }}
     >
       <div
-        className={`text-6xl ${iconColor} mr-6 flex-shrink-0`}
+        className={`text-5xl ${iconColor} md:mr-3 mr-6 lg:mr-6 flex-shrink-0 sm:text-6xl md:text-6xl lg:text-8xl`}
         style={{
           transition: "transform 0.3s ease", // Smooth transition for icon
         }}
       >
         <Icon />
       </div>
-      <div className="flex-1">
-        <h3 className="text-xl font-semibold text-neutral-300">{label}</h3>
-        <p className="text-4xl font-extrabold text-gradient bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-pink-500 to-purple-600">
+      <div className="flex-1 w-full">
+        <h3 className="text-lg sm:text-xl md:text-[1.1rem] lg:text-lg font-semibold text-neutral-300 truncate">{label}</h3>
+        <p className="text-3xl sm:text-4xl md:text-2xl font-extrabold text-gradient bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-pink-500 to-purple-600 truncate">
           {value}
         </p>
       </div>
