@@ -1,5 +1,4 @@
-// components/dashboard/energy-chart.tsx
-
+"use client";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 interface EnergyChartProps {
@@ -20,7 +19,7 @@ export const EnergyChart = ({ data, dataKey, stroke, title }: EnergyChartProps) 
           <YAxis />
           <Tooltip />
           <Legend />
-          <Line type="monotone" dataKey="value" stroke={stroke} activeDot={{ r: 8 }} />
+          <Line type="monotone" dataKey={dataKey} stroke={stroke} activeDot={{ r: 8 }} />
           <Line type="monotone" dataKey="voltage" stroke="#FF5733" />
           <Line type="monotone" dataKey="current" stroke="#C70039" />
           <Line type="monotone" dataKey="cost" stroke="#FFC300" /> {/* Added cost line */}

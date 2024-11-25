@@ -1,11 +1,11 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { EnergyChart } from "@/components/dashboard/energy-chart";
 import { StatsCard } from "@/components/dashboard/stats-card";
 import { TimeRangeSelector } from "@/components/dashboard/time-range-selector";
 import { DataTable } from "@/components/dashboard/data-table"; // Import DataTable component
 import { Zap, BatteryCharging, DollarSign, Cpu, BarChart, ArrowLeft } from "lucide-react"; // Import the ArrowLeft icon
-import { useState } from "react";
 import Link from "next/link"; // Import Link from Next.js for navigation
 
 const Dashboard = () => {
@@ -42,6 +42,21 @@ const Dashboard = () => {
     }
   };
 
+  // Update data periodically
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setData((prevData) => {
+        return prevData.map((entry) => ({
+          ...entry,
+          value: Math.random() * 100 + 50,  // Randomize energy values for dynamic effect
+          cost: Math.random() * 20 + 5,  // Randomize cost for dynamic effect
+        }));
+      });
+    }, 5000); // Update every 5 seconds
+
+    return () => clearInterval(interval); // Cleanup on component unmount
+  }, []);
+
   const totalEnergy = data.reduce((acc, cur) => acc + cur.value, 0);
   const totalCost = data.reduce((acc, cur) => acc + cur.cost, 0);
   const peakUsage = Math.max(...data.map((data) => data.value));
@@ -64,7 +79,7 @@ const Dashboard = () => {
           icon={Zap}
           iconColor="text-blue-500"
           label="Total Energy Used"
-          value={`${totalEnergy} kWh`}
+          value={`${totalEnergy.toFixed(2)} kWh`}
         />
         <StatsCard
           icon={BatteryCharging}
